@@ -1,4 +1,12 @@
-#include <random>
+/*
+Caden Archer
+Name: Pick a letter, any letter
+Discrption:Using a function it has the user input a letter of their choice and change the postioning to display a char of their choice unless its not a letter or is out of range
+
+
+*/
+
+
 #include<cstring>
 #include<string>
 #include <iomanip>
@@ -21,26 +29,26 @@ int main()
 }
 
 
-void letter(char WhatLetter, int ChangeLetter) {
+void letter(char WhatLetter, int ChangeLetter) {//Allows the user to input a char of their choice and change the char type
 
 	char LowerCase[27] = { "abcdefghijklmnopqrstuvwxyz" };
 	char UpperCase[27] = { "ABCDEFGHIJKLMNOPQRSTUVWXYZ" };
 	int LetterPlacement;
 
 
-	if (islower(WhatLetter)) {
+	if (islower(WhatLetter)) {//check if its a capital letter or not 
 
-		for (int i = 0;i < 27; i++) {
+		for (int i = 0;i < 27; i++) { //Find the letter placement in the array
 			if (WhatLetter == LowerCase[i]) {
 				LetterPlacement = i;
 				break;
 			}
 		}
-		if (ChangeLetter + LetterPlacement < 26 && ChangeLetter + LetterPlacement > 0) {
+		if (ChangeLetter + LetterPlacement < 26 && ChangeLetter + LetterPlacement > 0) {//checks to see if its in range 
 			cout << LowerCase[LetterPlacement + ChangeLetter];
 		}
 		else {
-			cout << "invalid Range Expection";
+			cout << "invalid Range Expection";//output if the character is out of range
 		}
 	}
 	else if (isupper(WhatLetter)) {
@@ -57,7 +65,7 @@ void letter(char WhatLetter, int ChangeLetter) {
 			cout << "invalid Range Expection";
 		}
 	}
-	else {
+	else { //output if its not a character in the alphabit 
 		cout << "Invaild Character Excpeption";
 	}
 
