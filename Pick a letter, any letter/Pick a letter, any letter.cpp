@@ -48,7 +48,7 @@ void letter(char WhatLetter, int ChangeLetter) {//Allows the user to input a cha
 			cout << LowerCase[LetterPlacement + ChangeLetter];
 		}
 		else {
-			cout << "invalid Range Expection";//output if the character is out of range
+			throw runtime_error("invalid Range Expection");//output if the character is out of range
 		}
 	}
 	else if (isupper(WhatLetter)) {
@@ -62,11 +62,11 @@ void letter(char WhatLetter, int ChangeLetter) {//Allows the user to input a cha
 			cout << UpperCase[LetterPlacement + ChangeLetter];
 		}
 		else {
-			cout << "invalid Range Expection";
+			throw runtime_error("invalid Range Expection");
 		}
 	}
 	else { //output if its not a character in the alphabit 
-		cout << "Invaild Character Excpeption";
+		throw runtime_error("Invaild Character Excpeption");
 	}
 
 }
